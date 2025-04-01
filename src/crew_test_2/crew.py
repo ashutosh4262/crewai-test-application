@@ -5,7 +5,7 @@ from crewai.project import CrewBase, agent, crew, task
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
-# from crewai_tools import SerperDevTool, ScrapeWebsiteTool
+from crewai_tools import SerperDevTool
 
 @CrewBase
 class CrewTest2():
@@ -23,7 +23,7 @@ class CrewTest2():
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'],
-            # tools=[SerperDevTool(), ScrapeWebsiteTool()],
+            # tools=[SerperDevTool()],
             verbose=True
         )
 
